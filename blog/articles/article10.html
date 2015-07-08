@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="唐锐的博客">
+    <meta name="author" content="唐锐">
+	<title>JavaScript 学习小结（三）</title>
+	<link rel="stylesheet" href="../css/article.css">
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+<body>
+	<div id="background"><a id="home" href="../index.html">Home</a></div>	
+	<header>
+		<h1>JavaScript 学习小结（三）</h1>
+		<img src="http://7xjr92.com1.z0.glb.clouddn.com/头像I.png" height="30" width="30" alt="Troy">
+		<time datetime="2012-06-21">21 June 2015</time>
+	</header>
+	<section id="content">
+	<h2>函数定义</h2>
+	
+		<pre>
+var functionName = function ( argument ){
+   		代码块...         //函数表达式
+}
+function functionName ( argument ){
+    	代码块...         //函数声明
+}
+		</pre>
+	
+	<h2>函数提升（Hoisting）</h2>
+	<p>提升是 JavaScript 默认将当前作用域提升到前面去的的行为。使用表达式定义函数时无法提升。<br><br>函数可以在声明之前调用：</p>
+	
+		<pre>
+myFunction(5);
+
+function myFunction(y) {
+    	return y * y;
+}
+		</pre>
+	
+	<h2>自调用函数</h2>
+	<p>函数表达式可以 “自调用”。如果表达式后面紧跟 () ，则会自动调用。</p>
+	
+		<pre>
+(function () {
+   		var x = "Hello!!";      // 我将调用自己，say"Hello!!"
+})();
+		</pre>
+	
+	<p>这是一个匿名自我调用的函数 (没有函数名)。</p>
+	<h2>函数是对象</h2>
+	<p>在 JavaScript 中使用 typeof 操作符判断函数类型将返回 “function” 。但，JavaScript 函数描述为一个对象更加准确。JavaScript 函数有属性和方法。<br><br>arguments.length 属性返回函数调用过程接收到的参数个数：</p>
+	
+		<pre>
+function myFunction(a, b) {
+   		return arguments.length;
+}
+		</pre>
+	
+	<p>toString() 方法将函数作为一个字符串返回:</p>
+	
+		<pre>
+function myFunction(a, b) {
+   		return a * b;
+}
+
+var txt = myFunction.toString();   //返回的是整个函数的字符串形式，而不是结果的字符串形式
+		</pre>
+	
+
+	<h2>默认参数</h2>
+	<p>如果函数在调用时缺少参数，参数会默认设置为： undefined，有时这是可以接受的，但是建议最好为参数设置一个默认值：</p>
+	
+		<pre>
+function myFunction(x, y) {
+   	if (y === undefined) {
+       	y = 0;
+	} 
+}
+function myFunction(x, y) {     //更简单的形式
+    y = y || 0;                 //定义了y时就返回y，没有定义时y为undefined，为false，返回0
+}
+		</pre>
+	
+
+	<h2>JavaScript 函数调用</h2>
+	<p>JavaScript 函数有 4 种调用方式，每种方式的不同方式在于 this 的初始化。</p>
+	<h3>this 关键字</h3>
+	<p>this指向函数执行时的当前对象。</p>
+	<h3>作为一个函数调用</h3>
+	
+		<pre>
+function myFunction(a, b) {
+   	return a * b;
+}
+myFunction(10, 2);           // myFunction(10, 2) 返回 20
+		</pre>
+	
+	<p>在浏览器中的页面对象是浏览器窗口(window 对象)。以上函数会自动变为 window 对象的函数。myFunction() 和 window.myFunction() 是一样的</p>
+	<h3>全局对象</h3>
+	<p>当函数没有被自身的对象调用是， this 的值就会变成全局对象。在 web 浏览器中全局对象是浏览器窗口（window 对象）。</p>
+	
+		<pre>
+function myFunction() {
+    return this;
+}
+myFunction();                // 返回 window 对象
+		</pre>
+	
+	<h3>作为方法调用</h3>
+	
+		<pre>
+var myObject = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+	myObject.fullName();         // 返回 "John Doe"
+		</pre>
+	
+	<h3>使用构造函数调用函数</h3>
+	<p>如果函数调用前使用了 new 关键字, 则是调用了构造函数。这看起来就像创建了新的函数，但实际上 JavaScript 函数是创建了新的对象：</p>
+	
+		<pre>
+// 构造函数:
+function myFunction(arg1, arg2) {
+    this.firstName = arg1;
+    this.lastName  = arg2;
+}
+
+// This creates a new object
+var x = new myFunction("John","Doe");
+x.firstName;                             // 返回 "John"
+		</pre>
+	
+	<p>构造函数的调用会创建一个新的对象。新对象会继承构造函数的属性和方法。</p>
+	<h3>作为函数方法调用函数</h3>
+	<p>在 JavaScript 中, 函数是对象。JavaScript 函数有它的属性和方法。call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身。</p>
+	
+		<pre>
+function myFunction(a, b) {
+    return a * b;
+}
+myFunction.call(myObject, 10, 2);      // 返回 20
+
+function myFunction(a, b) {
+    return a * b;
+}
+myArray = [10,2];
+myFunction.apply(myObject, myArray);   // 返回 20
+		</pre>
+	
+	<p>两个方法都使用了对象本身作为第一个参数。 两者的区别在于第二个参数： apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而call则作为call的参数传入（从第二个参数开始）。</p>
+	<h2>函数闭包</h2>
+	
+		<pre>
+function myFunction() {
+    var a = 4;
+    return a * a;         //16
+}
+
+var a = 4;
+function myFunction() {
+    return a * a;         //16
+}
+		</pre>
+	
+	<p>
+		后面一个实例中， a 是一个 全局 变量。在web页面中全局变量属于 window 对象。全局变量可应用于页面上的所有脚本。<br>
+		在第一个实例中， a 是一个 局部 变量。局部变量只能用于定义它函数内部。对于其他的函数或脚本代码是不可用的。<br>
+		全局和局部变量即便名称相同，它们也是两个不同的变量。修改其中一个，不会影响另一个的值。<br><br>
+		注意：变量声明是如果不使用 var 关键字，那么它就是一个全局变量，即便它在函数内定义。
+	</p>
+	<h3>变量生命周期</h3>
+	<p>
+		全局变量的作用域是全局性的，即在整个JavaScript程序中，全局变量处处都在。<br><br>而在函数内部声明的变量，只在函数内部起作用。这些变量是局部变量，作用域是局部性的；函数的参数也是局部性的，只在函数内部起作用。
+	</p>
+	<h3>JavaScript 内嵌函数</h3>
+	<p>所有函数都能访问全局变量。实际上，在 JavaScript 中，所有函数都能访问它们上一层的作用域。JavaScript 支持嵌套函数。嵌套函数可以访问上一层的函数变量。</p>
+	
+		<pre>
+function add() {
+    var counter = 0;
+    function plus() {counter += 1;}
+    plus();                             // plus() 可以访问父函数的 counter 变量：
+    return counter; 
+}
+		</pre>
+	
+	<h3>闭包</h3>
+	<p>闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭。</p>
+	
+		<pre>
+&ltbutton type="button" onclick="myFunction()">计数!&lt/button&gt
+
+&ltp id="demo">0&lt/p&gt
+
+&ltscript&gt
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}  
+})();    /*制造一个伪全局变量的意思吗？让匿名函数访问到上一层函数里的counter,并且不会把counter清零*/
+         //自调用函数，匿名函数
+function myFunction(){
+    document.getElementById("demo").innerHTML = add();
+}
+&lt/script&gt
+		</pre>
+	
+
+	</section>
+
+	<!-- 固定样式 -->
+
+	<!-- 分隔线 -->
+	<div class="post"></div>
+
+	<!-- 返回图标 -->
+	<a href="#background"><div id="scrollup"></div></a>
+
+	<!-- 固定格式的尾部 -->
+	<footer>
+		<p>Troy's blog &copy 2015 (  ͡° ͜ ʖ ͡°)</p>
+		<p>自豪地由自己手写(ง •̀_•́)ง</p>
+	</footer>
+</body>
+</html>

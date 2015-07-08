@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="唐锐的博客">
+    <meta name="author" content="唐锐">
+	<title>DOM编程艺术学习笔记(二)</title>
+	<link rel="stylesheet" href="../css/article.css">
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+<body>
+	<div id="background"><a id="home" href="../index.html">Home</a></div>	
+	<header>
+		<h1>DOM编程艺术学习笔记(二)</h1>
+		<img src="http://7xjr92.com1.z0.glb.clouddn.com/头像I.png" height="30" width="30" alt="Troy">
+		<time datetime="2012-06-14">14 June 2015</time>
+	</header>
+	<section id="content">
+
+	<h2>DOM</h2>
+	<p>DOM（<code>Document Object Model</code>）</p>
+	<h2>节点</h2>
+	<p>节点表示网络中的一个连接点。</p>
+	<h3>元素节点</h3>
+	<p>标签的名字就是元素的名字，元素可以包含其他的元素。唯一不被包含在其他元素内的元素是
+	<code>&lthtml&gt</code>元素，它是我们节点树的根元素。</p>
+	<h3>文本节点</h3>
+	<p>元素节点是节点类型的一种。如果一份文档完全由空白元素组成，它将只有一个结构，而不会包含什么内容。</p>
+	<h3>属性节点</h3>
+	<p>属性节点可以对元素做出更具体的描述，如<code>&lttitle&gt</code>、<code>&lthref&gt</code>。因为属性总是被放在起始标签里，所以属性节点总是被包含在元素节点中。并非所有的元素都包含着属性，但所有的属性都被元素包含。</p>
+	<h2>获取元素</h2>
+	<ul>
+		<li><code>getElementById</code>方法。这个方法将返回一个与给定id属性值的元素节点对应的对象。它是document对象特有的函数，在脚本代码中，函数名的后面必须跟有一对圆括号，这对圆括号包含着函数的参数。</li><br>
+		<li><code>getElementById("id")</code></li><br>
+		<li><code>getElementsByTagName</code>方法。这个方法返回一个对象数组，每个对象分别对应着给定标签的一个元素。这个方法也只有一个参数，就是标签的名字。这个调用返回一个对象数组，我们可以利用length属性查出这个数组里的元素个数。注意：即使在整个文档里这个标签只有一个元素，此方法仍然返回一个数组，如<code>&ltbody&gt</code>,此时，该数组的长度为1.<code>getElementsByTagName()</code> 方法返回元素的顺序是它们在文档中的顺序。取得的是一个数组，需要索引。</li><br>
+		<li>HTML5 DOM 中新增了一个方法：<code>getElementsByClassName</code>方法。由于这个方法还比较新，某些DOM实现里可能还没有，因此使用时要注意。使用此方法时将类名传入参数，要指定多个类名时，只需用空格隔开。</li>
+	</ul>
+	<h2>知识点</h2>
+	<ul>
+		<li>一份文档就是一颗节点树</li><br>
+		<li>节点分为不同的类型：元素节点、文本节点、属性节点</li><br>
+		<li><code>getElementById</code>将返回一个对象，该对象对应着文档里的一个特定的元素节点</li><br>
+		<li><code>getElementsByTagName</code> 和 <code>getElementsByClassName</code> 将返回一个对象数组，它们分别对应着文档里的一组特定的元素节点</li><br>
+		<li>每个节点都是一个对象</li>
+	</ul>	
+	<h2>获取和设置属性</h2>
+	<h3>getAttribute</h3>
+	<p>getAttribute 是一个函数。它只有一个参数——打算查询的属性的名字。</p>
+	<div class="code">	object.getAttribute("attribute");</div>
+	<p>与之前的方法不同，getAttribute 方法不属于 document 对象，所以不能通过 document 对象调用。它只能通过元素节点对象调用</p>
+	<h3>setAttribute</h3>
+	<p>此方法允许我们对属性节点的值做出修改，只能用于元素节点。</p>
+	<div class="code">object.setAttribute("attribute",value);</div>
+	<h2>onclick 事件处理函数</h2>
+	<div class="code">onclick = "showPic(this); return false;"</div>
+	<ul>
+		<li>this 关键字在这的含义“这个对象”。</li><br>
+		<li><code>onclick</code> 事件处理函数；事件处理函数的作用是，在特定事件发生时调用特定的JavaScript代码。</li><br>
+		<li>事件处理函数的工作机制：在给某个元素添加了事件处理函数后，一旦事件发生，相应的JavaScript代码就会执行。被调用的代码可以返回一个值，这个值将被传递给那个事件处理函数。这个示例中添加了一个 <code>onclick</code> 事件处理函数，并让这个处理函数所触发的代码返回布尔值 <code>true</code> 或 <code>false</code> 。这样的话，根据返回的值， <code>onclick</code> 处理函数就知道链接有没有被点击。而强制设置了 <code>return false</code> 之后，每次 <code>onclick</code> 处理函数都会认为链接并没有被打开，就不会有默认的在新标签打开链接的行为了。</li>
+	</ul>
+	<h2>childNodes属性</h2>
+	
+		<pre>
+function countBodyChildren(){
+    var body_element = document.getElementsByTagName("body")[0];
+    alert (body_element.childNodes.length);
+}
+window.onload = countBodyChildren;			
+		</pre>
+	
+	<ul>
+		<li><code>childNodes</code> 属性可以用来获取任何一个元素的所有子元素，它是一个包含这个元素全部子元素的数组。</li><br>
+		<li>因为文档只有一个 <code>body</code> 元素，所以索引取第一个元素。</li><br><br>
+		<li>使用 <code>onload</code> 事件处理函数，让这个函数在页面加载时执行。</li><br><br>
+		<li>由 <code>childNodes</code> 属性返回的数组包含所有类型的借点，而不仅仅是元素节点。</li>
+	</ul>
+	<h2>nodeType 属性</h2>
+	
+		<pre>
+node.nodeType
+alert (body_element.nodeType);
+		</pre>
+	
+	<ul>
+		<li>nodeType 的值是一个数字。</li><br>
+		<li>元素节点的 nodeType 属性值是 1。</li><br>
+		<li>属性节点的 nodeType 属性值是 2。</li><br>
+		<li>文本节点的 nodeType 属性值是 3。</li><br>
+		<li>可以根据 nodeType 的值对特定类型的节点进行处理（if）。</li>
+	</ul>
+	<h2>nodeValue 属性</h2>
+	<ul>
+		<li>如果想要改变一个节点的值，就要使用 nodeValue 属性，它用来得到和设置一个节点的值。</li><br>
+		<li><用 nodeValue 获取 description 对象的值并不是包含在这个段落里的文本。里面的文本是另一种节点，是 p 元素的第一个子节点。/li>
+	</ul>
+	<div class="code">alert (description.childNodes[0].nodeValue);</div>
+	<h2>firstChild 和 lastChild 属性</h2>
+	<ul>
+		<li>数组元素 childNodes[0] 有一个更直观易读的同义词，只要是访问 childNodes 数组的第一个元素，都可以写成 firstChild：</li>
+		
+			<pre>
+node.firstChild
+node.childNodes[0]				
+			</pre>
+		
+		<li>与之相对的是 lastChild 属性。如果不使用 lastChild 属性访问最后一个元素，则要使用下面这个复杂的语法：</li>
+		
+			<pre>
+node.childNodes[node.childNodes.length - 1];				
+			</pre>
+		
+	</ul>
+	<h2>小结</h2>
+	<p>初次使用 DOM 脚本编写了一个图片库脚本，了解了基本的获取属性、设置属性值、事件处理函数、找出正确节点的方法。</p>
+	</section>
+
+		<!-- 固定样式 -->
+
+	<!-- 分隔线 -->
+	<div class="post"></div>
+
+	<!-- 返回图标 -->
+	<a href="#background"><div id="scrollup"></div></a>
+
+	<!-- 固定格式的尾部 -->
+	<footer>
+		<p>Troy's blog &copy 2015 (  ͡° ͜ ʖ ͡°)</p>
+		<p>自豪地由自己手写(ง •̀_•́)ง</p>
+	</footer>
+</body>
+</html>

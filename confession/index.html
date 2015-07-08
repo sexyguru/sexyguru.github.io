@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>琦宝宝 | 傻大锐</title>
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body style="background-image: url(stardust.png)">
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">每个人的爱情，追溯到最后</span><br />
+			<span class="comments">总关乎于梦或者爱或者一些纯粹时光的美好事物</span><br />
+			<span class="comments">你就是这么一个人</span><br />
+			<span class="comments">生活中，那些最美好的时光、心情</span><br />
+			<span class="comments">追溯到最后，都与你密不可分</span><br />
+			<span class="comments">而每一天，又总会有那么一些细节，给我一种全新的美好</span><br />
+			<span class="comments">比如某个表情，某句话，某一次讨论和争辩</span><br />
+			<span class="comments">所以我每天都会觉得，比之前的爱又多了一点点</span><br />
+			<span class="comments">所以如果以爱上为标准</span><br />
+			<span class="comments">那么我每天都在继续爱上你</span><br />
+			<span class="comments">就是这样，关于纯粹时光的美好，是对感情最好的注解</span><br />
+			<span class="comments">无关物质，无关需求，无关交流</span><br />
+			<span class="comments">只是依偎坐着，也觉得生活如此美好</span><br />
+			<span class="comments">说到底，这些都只是跟“是你”有关</span><br />
+			<span class="comments">两个人所能给予对方的，无过于每时每刻的幸福</span><br />
+			<span class="comments">正是这种点滴的幸福，构成我们的生活</span><br /><br />
+			<span class="comments">你曾问我我为什么喜欢你，我当时没有回答出来</span><br />
+			<span class="comments">如果非要用一句话或者一段话来表达</span><br />
+			<span class="comments">我想会选择下面这段话：</span><br /><br />
+			<span class="placeholder">我走过很多路程，见过很多风景，而最终选择停下，</span><br />
+			<span class="placeholder">放弃沿途更多的可能性，也只是因为：</span><br />
+			<span class="placeholder"><h3>世上如卿有几人？</h3></span><br />
+			<br>
+			<br>
+			<span style="color:pink">I love you</span><br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words" style="color:pink">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div>- 糖先生</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<audio src="http://sc.111ttt.com/up/mp3/243346/4CBAA646387824F90E3610C596A26234.mp3" height="0" width="0" loop="true" autoplay></audio>
+
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2015, 0, 15);
+together.setHours(0);
+together.setMinutes(29);
+together.setSeconds(51);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="豆瓣网">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>豆瓣网 by.唐锐</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+		<!-- 导航 start -->
+		<nav>
+			<a href="http://www.douban.com"><img src="images/logo_db.png" height="30" width="154" alt="logo" id="logo_db"></a>
+			<form action="#" method="get">
+				<input type="text" placeholder="书籍、电影、音乐、书籍、小组、小站、成员" class="search" />
+				<p><a href="#" class="normalback"><img src="images/search_btn.png" height="13" width="13" alt="#"></a></p>
+			</form>
+			<ul>
+				<li><a href="#" id="nav-book"></a></li>
+				<li><a href="#" id="nav-movie"></a></li>
+				<li><a href="#" id="nav-music"></a></li>
+				<li><a href="#" id="nav-group"></a></li>
+				<li><a href="#" id="nav-fm"></a></li>
+				<li><a href="#" id="nav-city"></a></li>
+				<li><a href="#" id="nav-thing"></a></li>
+			</ul>
+		</nav>     
+		<!-- 导航 end -->
+
+		<!-- 注册 start -->
+		<section id="regis">
+			<div id="regis_box">
+				<div id="appcon"><img src="images/doubanapp_1.png" height="148" width="190" alt="#" id="doubanapp"></div>
+				<p id="logo_text"><span>豆瓣</span><br>汇集一亿人的生活趣味</p>
+				<a href="#" id="regis_btn">下载豆瓣客户端</a>
+				<img src="images/erweima.png" height="29" width="30" alt="#" id="erweima">
+				<div id="verticalline"></div>
+				<form action="#" method="get">
+				<input type="text" placeholder="邮箱/手机号" class="search" id="logusername" />
+				<input type="text" placeholder="密码" class="search" id="logpasswd" />
+				<div><a href="#">忘记密码</a></div>
+				<div id="rememberme"><input type="checkbox" /> 记住我</div>
+				<a href="#" id="login">登陆</a>
+				<a href="#" id="signin">注册</a>
+				</form>
+			</div>
+		</section>   
+		<!-- 注册 end -->
+
+		<!-- 头部广告 start -->
+		<section id="head_ad"><a href="#" class="normalback"><img src="images/head_ad.jpg" height="90" width="950" alt="#"></a></section>  
+		<!-- 头部广告 end -->
+
+		<!-- 热点内容 start -->
+		<section id="hot">
+			<h2 Class="title">热点内容 · · · · · ·</h2>
+			<div id="hot_left">
+				<ul>
+					<li><a href="#"><img src="images/biancheng.jpg" height="170" width="170" alt="#"></a><a href="#">川黔渝的边城</a><span class="description">18张图片</span>	</li>
+					<li><a href="#"><img src="images/piaoliu.jpg" height="170" width="170" alt="#"></a><a href="#">域外看中国（清国漂流图）</a><span class="description">169<br>张图片</span>	</li>
+					<li><a href="#"><img src="images/huangcun.jpg" height="170" width="170" alt="#"></a><a href="#">雾岛荒村 </a><span class="description">32张图片</span>	</li>
+					<li><a href="#"><img src="images/shudian.jpg" height="170" width="170" alt="#"></a><a href="#">世界各地的獨立書店 </a><span class="description">209张图片</span>	</li>
+				</ul>	
+			</div>
+			<div id="hot_mid">
+				<ul>
+					<li><a href="#">活力，女人改变look的第一步</a><h3>余点的日记</h3><p>女人与女人之间的区别，可以是美丽与不美丽，也<br>可以是聪明与不聪明，但我现在最推...</p></li>
+					<li><a href="#">2015上半年护肤品总结(混油皮)</a></li>
+					<li><a href="#">那些年，我们欠的那些电影票</a></li>
+					<li><a href="#">号称三年不想再碰日料是怎样一种体验——日本游<br>之美食篇</a></li>
+					<li><a href="#">上海电影节最全看片指南：50部推荐影片+具体排片时间</a></li>
+					<li><a href="#">一个身份重置的娜塔莉波特曼</a></li>
+					<li><a href="#">一本只有264个字的书，却引爆了世界潮流！</a></li>
+					<li><a href="#">你的皮肤为何很难变好？（护肤品篇）</a></li>
+					<li><a href="#">彩铅绘画技术贴 — 致所有已经、正在和打算关注我的友邻们</a></li>
+					<li><a href="#">你高兴哥手把手教你做外婆『红烧肉』。</a></li>
+				</ul>
+			</div>
+			<div id="hot_right">
+				<ul>
+					<li><img src="images/yikeapp.jpg" height="112" width="270" alt="#"></li>
+					<li><h2 class="title">线上活动 · · · · · ·</h2>（<a href="#">更多</a>）</li>
+					<li class="hot_right_date"><a href="#">【婚礼之前，与你告别】给你曾经深爱过的Ta写一句话</a><br><span class="description">时间：5月21日 - 6月23日<br>1198人参加</span></li>
+					<li class="hot_right_date"><a href="#">反手摸到肚脐眼儿秀出好身材。</a><br><span class="description">时间：6月10日 - 月9日<br>102人参加</span></li>
+					<li class="hot_right_date"><a href="#">总有一部电影打动你，一人推荐一部治愈系电影吧！</a><br><span class="description">时间：5月19日 - 6月21日<br>1078人参加</span></li>
+				</ul>
+			</div>
+		</section>
+		<!-- 热点内容 end -->
+
+		<!-- 电影 start -->
+		<section id="movie_box">
+			<div id="movie">
+				<div class="menu">
+					<ul>
+						<li><a href="#" class="menu_title">电影</a></li>
+						<li><a href="#">影讯&amp;购票</a></li>
+						<li><a href="#">选电影</a><sup>new</sup></li>
+						<li><a href="#">电视剧</a></li>
+						<li><a href="#">排行榜</a></li>
+						<li><a href="#">分类</a></li>
+						<li><a href="#">影评</a></li>
+						<li><a href="#">预告片</a></li>
+					</ul>
+				</div>
+				<div id="movie_hot">
+					<h2 class="title">正在热映 · · · · · ·（更多）</h2>
+					<ul>
+						<li>
+							<div><a href="#" class="colorback"><img src="images/zhuluoji.jpg" height="140" width="100" alt="#"></a></div>
+							<a href="#" class="movie_hot_title">侏罗纪世界</a><br>
+							<img src="images/rate1.png" height="14" width="81" alt=""><br>
+							<a href="#" class="movie_ticket">选坐购票</a>
+						</li>
+						<li>
+							<div><a href="#" class="colorback"><img src="images/shinian.jpg" height="140" width="100" alt="#"></a></div>
+							<a href="#" class="movie_hot_title">再见我们的十年...</a><br>
+							<img src="images/rate1.png" height="14" width="81" alt=""><br>
+							<a href="#" class="movie_ticket">选坐购票</a>
+						</li>
+						<li>
+							<div><a href="#" class="colorback"><img src="images/duola.jpg" height="140" width="100" alt="#"></a></div>
+							<a href="#" class="movie_hot_title">哆啦A梦：伴我...</a><br>
+							<img src="images/rate1.png" height="14" width="81" alt=""><br>
+							<a href="#" class="movie_ticket">选坐购票</a>
+							</li>
+						<li>
+							<div><a href="#" class="colorback"><img src="images/woshishui.jpg" height="140" width="100" alt="#"></a></div>
+							<a href="#" class="movie_hot_title">我是谁2015...</a><br>
+							<img src="images/rate1.png" height="14" width="81" alt=""><br>
+							<a href="#" class="movie_ticket">选坐购票</a>
+						</li>
+					</ul>
+				</div>
+					<div id="movie_other">
+						<h2 class="title">影片分类 · · · · · ·  ( 更多 ) </h2>	
+						<div id="movie_cate">
+							<a href="#">爱情</a>
+							<a href="#">喜剧</a>
+							<a href="#">动画</a>
+							<a href="#">冒险</a>
+							<a href="#">动作</a>
+							<a href="#">恐怖</a>
+							<a href="#">悬疑</a>
+							<a href="#">惊悚</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">爱情</a>
+							<a href="#">英国</a>
+							<a href="#">台湾</a>
+							<a href="#">意大利</a>
+						</div>
+						<div id="movie_recent">
+							<h2 class="title">近期热门 · · · · · ·  ( 更多 )</h2>
+							<ul>
+								<li>1. <a href="#">功之怒</a></li>
+								<li>2. <a href="#">时光尽头的恋人</a></li>
+								<li>3. <a href="#">机械姬</a></li>
+								<li>4. <a href="#">军中乐园</a></li>
+								<li>5. <a href="#">小羊肖恩</a></li>
+								<li>6. <a href="#">我是谁：没有绝对安全的系统</a></li>
+								<li>7. <a href="#">完美音调2</a></li>
+								<li>8. <a href="#">超能查派</a></li>
+								<li>9. <a href="#">青春之旅 真人版</a></li>
+								<li>10. <a href="#">它在身后</a></li>
+							</ul>
+						</div>
+					</div>				
+			</div>
+		</section>
+		<!-- 电影 end -->
+
+		<!-- 小组 start -->
+
+		<section id="group_box">
+			<div id="group">
+				<div class="menu">
+					<ul>
+						<li><a style="color:#a16b4e"  href="#" class="menu_title" >小组</a></li>
+						<li><a style="color:#a16b4e"  href="#">精选</a></li>
+						<li><a style="color:#a16b4e"  href="#">文化</a></li>
+						<li><a style="color:#a16b4e"  href="#">行摄</a></li>
+						<li><a style="color:#a16b4e"  href="#">娱乐</a></li>
+						<li><a style="color:#a16b4e"  href="#">时尚</a></li>
+						<li><a style="color:#a16b4e"  href="#">生活</a></li>
+						<li><a style="color:#a16b4e"  href="#">科技</a></li>
+					</ul>
+				</div>
+				<div id="group_content">
+					<h2 class="title">热门小组 · · · · · ·  ( 更多 )</h2>
+					<ul>
+						<li><a href="#"><img class="group_img" src="images/group_1.jpg" height="48" width="48" alt=""></a>一万小时梦想实践法<br><span class="description">41841 个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_2.jpg" height="48" width="48" alt=""></a>迷信老鼠会★国在山河破★<br><span class="description">3840个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_3.jpg" height="48" width="48" alt=""></a>“女权”是权利的权！然后呢？<br><span class="description">3215个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_4.jpg" height="48" width="48" alt=""></a>掀起你的内幕来 / 青草公益活动月<br><span class="description">32137个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_1.jpg" height="48" width="48" alt=""></a>一万小时梦想实践法<br><span class="description">41841 个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_2.jpg" height="48" width="48" alt=""></a>迷信老鼠会★国在山河破★<br><span class="description">3840个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_3.jpg" height="48" width="48" alt=""></a>“女权”是权利的权！然后呢？<br><span class="description">3215个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_4.jpg" height="48" width="48" alt=""></a>掀起你的内幕来 / 青草公益活动月<br><span class="description">32137个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_1.jpg" height="48" width="48" alt=""></a>一万小时梦想实践法<br><span class="description">41841 个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_2.jpg" height="48" width="48" alt=""></a>迷信老鼠会★国在山河破★<br><span class="description">3840个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_3.jpg" height="48" width="48" alt=""></a>“女权”是权利的权！然后呢？<br><span class="description">3215个成员</span></li>
+						<li><a href="#"><img class="group_img" src="images/group_4.jpg" height="48" width="48" alt=""></a>掀起你的内幕来 / 青草公益活动月<br><span class="description">32137个成员</span></li>												
+					</ul>
+				</div>
+				<div id="group_cate">
+					<h2 class="title">小组分类 · · · · · ·  ( 更多 )</h2>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+								<dd><a href="#">运动</a></dd>
+								<dd><a href="#">戏曲</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>
+						
+					</dl>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+								<dd><a href="#">运动</a></dd>
+								<dd><a href="#">戏曲</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>
+						
+					</dl>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+								<dd><a href="#">运动</a></dd>
+								<dd><a href="#">戏曲</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>
+						
+					</dl>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+								<dd><a href="#">运动</a></dd>
+								<dd><a href="#">戏曲</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>						
+					</dl>			
+										<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+								<dd><a href="#">运动</a></dd>
+								<dd><a href="#">戏曲</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>						
+					</dl>
+										<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+								<dd><a href="#">运动</a></dd>
+								<dd><a href="#">戏曲</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>						
+					</dl>
+										<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+								<dd><a href="#">运动</a></dd>
+								<dd><a href="#">戏曲</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>						
+					</dl>		
+				</div>
+			</div>
+		</section>
+
+		<!-- 小组 end -->
+
+		<!-- 读书 start -->
+
+		<section id="read_box">
+			<div id="read">
+				<div class="menu">
+					<ul>
+						<li><a href="#" class="menu_title">读书</a></li>
+						<li><a href="#">分类浏览</a></li>
+						<li><a href="#">阅读</a><sup>new</sup></li>
+						<li><a href="#">作者</a></li>
+						<li><a href="#">书评</a></li>
+						<li><a href="#">购书单</a></li>
+					</ul>
+				</div>
+				<div id="read_content">
+					<h2 class="title">新书速递 · · · · · ·（更多）</h2>
+					<ul>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+					</ul>
+					<br>
+					<h2 class="title">原创数字作品 · · · · · ·（更多）</h2>
+					<ul>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+						<li><img src="images/book.jpg" height="147" width="100" alt=""><br><span>说谎的人<br>〔美〕 E. ...</span><br><a href="#">免费试读</a></li>
+					</ul>
+				</div>
+				<div id="read_tag">
+					<h2 class="title">热门标签 · · · · · ·（更多）</h2>
+					<ul>
+						<ul>
+							<li>[文学]</li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+						</ul>
+												<ul>
+							<li>[文学]</li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+						</ul>
+												<ul>
+							<li>[文学]</li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+						</ul>
+												<ul>
+							<li>[文学]</li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+						</ul>
+												<ul>
+							<li>[文学]</li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+						</ul>
+												<ul>
+							<li>[文学]</li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+							<li><a href="#">小说</a></li>
+						</ul>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 读书 end -->
+
+		<!-- 东西 start -->
+		
+		<section id="thing">
+				<div class="menu">
+					<ul>
+						<li><a style="color:#a16b4e" href="#" class="menu_title">东西</a></li>
+						<li><a style="color:#a16b4e"  href="#">女装</a></li>
+						<li><a style="color:#a16b4e"  href="#">女鞋</a></li>
+						<li><a style="color:#a16b4e"  href="#">男装</a></li>
+						<li><a style="color:#a16b4e"  href="#">男鞋</a></li>
+						<li><a style="color:#a16b4e"  href="#">箱包</a></li>
+						<li><a style="color:#a16b4e"  href="#">配饰</a></li>
+						<li><a style="color:#a16b4e"  href="#">家具装饰</a></li>
+						<li><a style="color:#a16b4e"  href="#">美妆</a></li>
+						<li><a style="color:#a16b4e"  href="#">美食</a></li>
+						<li><a style="color:#a16b4e"  href="#">数码</a></li>
+						<li><a style="color:#a16b4e"  href="#">运动/户外</a></li>
+						<li><a style="color:#a16b4e"  href="#">礼物</a></li>
+						<li><a style="color:#a16b4e"  href="#">日用百货</a></li>
+						<li><a style="color:#a16b4e"  href="#">海淘</a></li>
+					</ul>
+				</div>
+				<div id="thing_content">
+					<h2 class="title">新书速递 · · · · · ·（更多）</h2>
+					<div id="thing_content_left">
+						<div>
+							<a><img src="images/thing1.jpg" height="210" width="250" alt=""></a>
+							<span><a href="#">拼接蕾丝条纹中... </a></span>
+							<span>￥65.90</span>
+							<span>“很爱这种蕾丝拼接tee，不会觉得太腻却带着一...” </span>
+						</div><br>
+						<div>
+							<a><img src="images/thing1.jpg" height="210" width="250" alt=""></a>
+							<span><a href="#">拼接蕾丝条纹中... </a></span>
+							<span>￥65.90</span>
+							<span>“很爱这种蕾丝拼接tee，不会觉得太腻却带着一...” </span>
+						</div>
+					</div>
+					<div id="thing_content_right">
+						<ul>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+							<li><a href="#"><img src="images/thing2.jpg" height="100" width="100" alt=""></a><br><a><span>三页立体光...</span></a></li>
+						</ul>
+					</div>
+					<div id="thing_other">
+						<h2 class="title">新书速递 · · · · · ·（更多）</h2>
+						<ul>
+							<li>
+								<h3>回购~回购~回购才是真爱！请看我真爱！ </h3>
+									<p>空瓶就算真爱了吗？不一定哦~。 Lulu也空瓶过不少产品，但是却没有再用下去的勇气。。。...<img src="images/thing3.jpg" height="45" width="90" alt=""></p>								
+							</li>
+							<li>
+								<h3>回购~回购~回购才是真爱！请看我真爱！ </h3>
+									<p>空瓶就算真爱了吗？不一定哦~。 Lulu也空瓶过不少产品，但是却没有再用下去的勇气。。。...<img src="images/thing3.jpg" height="45" width="90" alt=""></p>								
+							</li>
+							<li>
+								<h3>回购~回购~回购才是真爱！请看我真爱！ </h3>
+									<p>空瓶就算真爱了吗？不一定哦~。 Lulu也空瓶过不少产品，但是却没有再用下去的勇气。。。...<img src="images/thing3.jpg" height="45" width="90" alt=""></p>								
+							</li>
+							<li>
+								<h3>回购~回购~回购才是真爱！请看我真爱！ </h3>
+									<p>空瓶就算真爱了吗？不一定哦~。 Lulu也空瓶过不少产品，但是却没有再用下去的勇气。。。...<img src="images/thing3.jpg" height="45" width="90" alt=""></p>								
+							</li>
+						</ul>
+					</div>
+				</div>
+		</section>
+
+		<!-- 东西 end -->
+
+		<!-- 同城 start -->
+
+		<section id="city_box">
+			<div id="city">
+				<div class="menu">
+					<ul>
+						<li><a href="#" class="menu_title" style="color:#ec5303">同城</a></li>
+						<li><a href="#" style="color:#ec5303">同城活动</a></li>
+						<li><a href="#" style="color:#ec5303">主办方</a></li>
+						<li><a href="#" style="color:#ec5303">舞台剧</a></li>
+					</ul>
+				</div>
+				<div id="city_content">
+					<h2 class="title">北京 · 本周热门活动 · · · · · ·</h2>
+					<ul>
+						<li>
+							<img src="images/city.jpg" height="90" width="70" alt="">
+							<p><a href="#">（北京）马良、柏邦妮：时光机操作指南</a></p>
+							<p> 6月21日 周日 15:00 - 17:00中关村创业大街 言几又书店<br>61人关注 </p>
+						</li>
+						<li>
+							<img src="images/city.jpg" height="90" width="70" alt="">
+							<p><a href="#">（北京）马良、柏邦妮：时光机操作指南</a></p>
+							<p> 6月21日 周日 15:00 - 17:00中关村创业大街 言几又书店<br>61人关注 </p>
+						</li>
+						<li>
+							<img src="images/city.jpg" height="90" width="70" alt="">
+							<p><a href="#">（北京）马良、柏邦妮：时光机操作指南</a></p>
+							<p> 6月21日 周日 15:00 - 17:00中关村创业大街 言几又书店<br>61人关注 </p>
+						</li>
+						<li>
+							<img src="images/city.jpg" height="90" width="70" alt="">
+							<p><a href="#">（北京）马良、柏邦妮：时光机操作指南</a></p>
+							<p> 6月21日 周日 15:00 - 17:00中关村创业大街 言几又书店<br>61人关注 </p>
+						</li>
+					</ul>
+				</div>
+				<div id="group_cate">
+					<h2 style="margin-bottom:15px" class="title">活动标签 · · · · · ·</h2>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+					</dl>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>					
+					</dl>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">桌游</a></dd>
+								<dd><a href="#">怪癖</a></dd>						
+					</dl>
+					<dl class="group_fenlei">
+						<dt>
+							<a href="#" style="color:#333;">兴趣» </a>
+						</dt>
+								<dd><a href="#">旅行</a></dd>          
+								<dd><a href="#">摄影</a></dd>
+								<dd><a href="#">影视</a></dd>
+								<dd><a href="#">音乐</a></dd>
+								<dd><a href="#">文学</a></dd>
+								<dd><a href="#">游戏</a></dd>
+								<dd><a href="#">动漫</a></dd>
+					</dl>
+				</div>
+			</div>
+		</section>
+
+		<!-- 同城 end -->
+
+		<!-- 尾部广告 start -->
+
+		<section id="foot_ad">
+			<a href=""><img src="images/foot_ad1.jpg" height="98" width="310" alt=""></a>
+			<a href=""><img src="images/foot_ad2.jpg" height="98" width="310" alt=""></a>
+			<a href=""><img src="images/foot_ad3.jpg" height="90" width="950" alt=""></a>
+		</section>
+
+		<!-- 尾部广告 end -->
+
+		<!-- 尾部 start -->
+
+		<footer>
+			<div id="footer_left">
+				<p>
+					&copy2005－2015 douban.com, all rights reserved <br>
+					<a href="#">京ICP证090015号</a>京ICP备11027288号 网络视听许可证<a href="#">0110418</a>号<br>
+					文网文[2012]0704-231号 京公网安备110105000728  新出网证(京)字129号<br>
+					违法和不良信息举报电话：4006910007 <br>
+					<a href="#">违法和不良信息举报中心</a> 举报电话：12377 举报邮箱：jubao@12377.cn <br>
+				</p>
+			</div>
+			<div id="footer_right">
+				<ul>
+					<li><a href="#">关于豆瓣</a> ·</li>
+					<li><a href="#">在豆瓣工作</a> ·</li>
+					<li><a href="#">联系我们</a> ·</li>
+					<li><a href="#">免责声明</a> ·</li>
+					<li><a href="#">帮助中心</a> ·</li>
+					<li><a href="#">开发者</a> ·</li>
+					<li><a href="#">移动应用</a> ·</li>
+					<li><a href="#">豆瓣广告</a> ·</li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- 尾部 end -->
+    </body>
+</html>

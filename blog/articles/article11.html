@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="唐锐的博客">
+    <meta name="author" content="唐锐">
+	<title>JavaScript 学习小结（四）</title>
+	<link rel="stylesheet" href="../css/article.css">
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+<body>
+	<div id="background"><a id="home" href="../index.html">Home</a></div>	
+	<header>
+		<h1>JavaScript 学习小结（四）</h1>
+		<img src="http://7xjr92.com1.z0.glb.clouddn.com/头像I.png" height="30" width="30" alt="Troy">
+		<time datetime="2012-06-22">22 June 2015</time>
+	</header>
+	<section id="content">
+	<h2>改变 HTML 内容</h2>
+	<div class="code">document.getElementById(id).innerHTML=new HTML</div>
+	<h2>改变 HTML 属性</h2>
+	
+		<pre>
+//HTML DOM方法是
+document.getElementById(id).attribute=new value
+//DOM方法是
+document.getElementById(id);
+setAttribute(attribute, value);
+		</pre>
+	
+	<h2>改变 HTML 样式</h2>
+	<div class="code">document.getElementById(id).style.property=new style</div>
+	<h2>对事件做出反应</h2>
+	<h3>onclick事件</h3>
+	
+		<pre>
+onclick = JavaScript     //添加事件
+
+&ltbutton onclick="displayDate()"&gtTry it&lt/button&gt       //直接在标签内分配事件
+
+document.getElementById("myBtn").onclick=function(){displayDate()};     //使用DOM来分配事件
+		</pre>
+	
+
+	<h3>onload 和 onunload 事件</h3>
+	<p>onload 和 onunload 事件会在用户进入或离开页面时被触发。<br>
+	onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。<br>
+	onload 和 onunload 事件可用于处理 cookie。</p>
+	<div class="code">&ltbody onload="checkCookies()"&gt      //弹窗-提示浏览器cookie是否可用。</div>
+	
+	<h3>onchange 事件</h3>
+	<p>onchange 事件常结合对输入字段的验证来使用。</p>
+	
+		<pre>
+&ltinput type="text" id="fname" onchange="upperCase()"&gt     
+//当用户改变输入字段的内容时，会调用 upperCase() 函数
+		</pre>
+	
+
+	<h3>onmouseover 和 onmouseout 事件</h3>
+	<p>onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</p>
+	<h3>onmousedown、onmouseup 以及 onclick 事件</h3>
+	<p>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。</p>
+
+	<h2>HTML DOM EventListener</h2>
+	<p>addEventListener() 方法用于向指定元素添加事件句柄。addEventListener() 方法添加的事件句柄不会覆盖已存在的事件句柄。</p>
+	<div class="code">element.addEventListener(event, function, useCapture);</div>
+	<p>第一个参数是事件的类型 (如 “click” 或 “mousedown”). <br>
+	第二个参数是事件触发后调用的函数。<br>
+	第三个参数是个布尔值用于描述事件是冒泡还是捕获。该参数是可选的。</p>
+	<h3>向原元素添加事件句柄</h3>
+	<div class="code">element.addEventListener("click", function(){ alert("Hello World!"); });</div>
+	<h3>向同一个元素中添加多个事件句柄</h3>
+	<p>addEventListener() 方法允许向同个元素添加多个事件，且不会覆盖已存在的事件：</p>
+	
+		<pre>
+element.addEventListener("click", myFunction);
+element.addEventListener("click", mySecondFunction);
+		</pre>
+	
+	<p>可以向同个元素添加不同类型的事件：</p>
+	
+		<pre>
+element.addEventListener("mouseover", myFunction);
+element.addEventListener("click", mySecondFunction);
+element.addEventListener("mouseout", myThirdFunction);
+		</pre>
+	
+	<h3>向 Window 对象添加事件句柄</h3>
+	<p>当用户重置窗口大小时添加事件监听：</p>
+	
+		<pre>
+window.addEventListener("resize", function(){
+    document.getElementById("demo").innerHTML = sometext;
+});
+		</pre>
+	
+	<h3>传递参数</h3>
+	<p>当传递参数值时，使用”匿名函数”调用带参数的函数：</p>
+	<div class="code">element.addEventListener("click", function(){ myFunction(p1, p2); });</div>
+
+	<h3>事件冒泡与事件捕获</h3>
+	<p>事件传递有两种方式：冒泡与捕获。<br>
+	事件传递定义了元素事件触发的顺序。 如果你将 &ltp&gt 元素插入到 &ltdiv&gt 元素中，用户点击 &ltp&gt 元素, 哪个元素的 “click” 事件先被触发呢？<br><br>
+	在 冒泡 中，内部元素的事件会先被触发，然后再触发外部元素，即： &ltp&gt 元素的点击事件先触发，然后会触发 &ltdiv&gt 元素的点击事件。<br><br>
+	在 捕获 中，外部元素的事件会先被触发，然后才会触发内部元素的事件，即： &ltdiv&gt 元素的点击事件先触发 ，然后再触发 &ltp&gt 元素的点击事件。</p><br>
+	<p>addEventListener() 方法可以指定 “useCapture” 参数来设置传递类型：</p>
+	<div class="code">addEventListener(event, function, useCapture);</div>
+	<p>默认值为 false, 即冒泡传递，当值为 true 时, 事件使用捕获传递。</p>
+	<div class="code">document.getElementById("myDiv").addEventListener("click", myFunction, true);</div>
+	<p>内部外部的元素需要同时设置监听</p>
+
+	<h3>removeEventListener() 方法</h3>
+	<p>removeEventListener() 方法移除由 addEventListener() 方法添加的事件句柄:</p>
+	<div class="code">element.removeEventListener("mousemove", myFunction);</div>
+
+	<h2>HTML DOM 元素的操作</h2>
+	<h3>添加 HTML 元素</h3>
+	
+		<pre>
+&ltp id="p1"&gtThis is a paragraph.&lt/p&gt
+&ltp id="p2"&gtThis is another paragraph.&lt/p&gt
+
+&ltscript&gt
+var para=document.createElement("p");      //创建一个p元素
+var node=document.createTextNode("This is new.");        //创建一个新的文本节点
+para.appendChild(node);         //将这个节点追加到p元素上
+
+var element=document.getElementById("p1");       //获取id为p1的元素
+element.appendChild(para);          //将创建的p元素追加到id为p1的元素之后
+&lt/script&gt
+		</pre>
+	
+	<h3>删除已有的 HTML 元素</h3>
+	
+		<pre>
+&ltdiv id="div1"&gt
+&ltp id="p1"&gtThis is a paragraph.&lt/p&gt
+&ltp id="p2"&gtThis is another paragraph.&lt/p&gt
+&lt/div&gt
+&ltscript&gt
+var parent=document.getElementById("div1");     //获取div1
+var child=document.getElementById("p1");        //获取p1
+parent.removeChild(child);                      //将子节点p1从div1中移除
+&lt/script&gt
+		</pre>
+	
+	<p>如果要不知道父元素的情况下删除节点，常用的方法是这样的：</p>
+	</section>
+
+	<!-- 固定样式 -->
+
+	<!-- 分隔线 -->
+	<div class="post"></div>
+
+	<!-- 返回图标 -->
+	<a href="#background"><div id="scrollup"></div></a>
+
+	<!-- 固定格式的尾部 -->
+	<footer>
+		<p>Troy's blog &copy 2015 (  ͡° ͜ ʖ ͡°)</p>
+		<p>自豪地由自己手写(ง •̀_•́)ง</p>
+	</footer>
+</body>
+</html>

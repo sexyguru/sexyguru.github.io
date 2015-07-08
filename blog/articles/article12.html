@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="唐锐的博客">
+    <meta name="author" content="唐锐">
+	<title>JavaScript 学习小结（五）</title>
+	<link rel="stylesheet" href="../css/article.css">
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+<body>
+	<div id="background"><a id="home" href="../index.html">Home</a></div>	
+	<header>
+		<h1>JavaScript 学习小结（五）</h1>
+		<img src="http://7xjr92.com1.z0.glb.clouddn.com/头像I.png" height="30" width="30" alt="Troy">
+		<time datetime="2012-06-22">22 June 2015</time>
+	</header>
+	<section id="content">
+
+	<h2>JavaScript 对象</h2>
+	<h3>所有事物都是对象</h3>
+	<p>JavaScript 提供多个内建对象，比如 String、Date、Array 等等。此外，JavaScript 允许自定义对象。 对象只是带有属性和方法的特殊数据类型。</p><br>
+	<p>~ 布尔型可以是一个对象。<br>
+	~ 数字型可以是一个对象。<br>
+	~ 字符串也可以是一个对象<br>
+	~ 日期是一个对象<br>
+	~ 数学和正则表达式也是对象<br>
+	~ 数组是一个对象<br>
+	~ 甚至函数也可以是对象</p><br>
+
+	<h3>访问对象的属性</h3>
+	<p>访问对象属性的语法是：</p>
+	
+		<pre>
+objectName.propertyName
+
+var message="Hello World!";
+var x=message.length;      //12
+//使用了 String 对象的 length 属性来获取字符串的长度
+		</pre>
+	
+	
+	<h3>访问对象的方法</h3>
+	<p>可以通过以下语法来调用方法：</p>
+	
+		<pre>
+objectName.methodName()
+
+var message="Hello world!";
+var x=message.toUpperCase();   //HELLO WORLD!  
+//使用了 String 对象的 toUpperCase() 方法将字符串转换成大写形式
+		</pre>
+	
+
+	<h3>创建 JavaScript 对象</h3>
+	<p>创建新对象有两种不同的方法：<br><br>
+	~ 定义并创建对象的实例<br>
+	~ 使用函数来定义对象，然后创建新的对象实例</p>
+	<h4>创建直接的实例</h4>
+	
+		<pre>
+person=new Object();
+person.firstname="Rui";
+person.lastname="Tang";
+person.age=20;
+person.eyecolor="black";
+
+//或者：!!!直接声明，不需要var或者new之类的关键字
+
+person={firstname:"Rui",
+lastname:"Tang",
+age:20,
+eyecolor:"black"};
+		</pre>
+	
+	<h4>使用对象构造器</h4>
+	
+		<pre>
+function person(firstname,lastname,age,eyecolor)
+{
+this.firstname=firstname;
+this.lastname=lastname;
+this.age=age;
+this.eyecolor=eyecolor;
+}
+		</pre>
+	
+	<p>在JavaScript中，this通常指向的是我们正在执行的函数本身，或者是指向该函数所属的对象（运行时）</p>
+
+	<h3>创建 JavaScript 对象实例</h3>
+	<p>一旦有了对象构造器，就可以创建新的对象实例，就像这样：<br><br>
+	!!!一定要创建新的实例才可以，不能直接person(“Rui”,”Tang”,20),这样是没用的!!!</p>
+	
+		<pre>
+var me = new person("Rui","Tang",20);
+var myFather=new person("John","Doe",50,"blue");
+var myMother=new person("Sally","Rally",48,"green");
+		</pre>
+	
+	<h2>把属性添加到 JavaScript 对象</h2>
+	<p>可以通过为对象赋值，向已有对象添加新属性：<br><br>
+	假设 person 对象已存在 - 可以为其添加这些新属性：firstname、lastname、age 以及 eyecolor：</p>
+	
+		<pre>
+person.firstname="John";
+person.lastname="Doe";
+person.age=30;
+person.eyecolor="blue";
+
+x=person.firstname;    //John
+		</pre>
+	
+	<h2>把方法添加到 JavaScript 对象</h2>
+	
+		<pre>
+function person(firstname,lastname,age,eyecolor)
+{
+this.firstname=firstname;
+this.lastname=lastname;
+this.age=age;
+this.eyecolor=eyecolor;
+
+this.changeName=function (name)
+{
+this.lastname=name;
+}
+}
+		</pre>
+	
+	<h2>JavaScript 类</h2>
+	<p>JavaScript 是面向对象的语言，但 JavaScript 不使用类。<br><br>
+	在 JavaScript 中，不会创建类，也不会通过类来创建对象（就像在其他面向对象的语言中那样）。<br><br>
+	JavaScript 基于 prototype，而不是基于类的。</p>
+
+	<h2>JavaScript for…in 循环</h2>
+	<p>JavaScript for…in 语句循环遍历对象的属性。 for…in 循环中的代码块将针对每个属性执行一次。<br><br>
+	语法：</p>
+	
+		<pre>
+for (variable in object)
+    {
+    code to be executed
+}
+		</pre>
+	
+	<p>循环遍历对象的属性：</p>
+	
+		<pre>
+var person={fname:"John",lname:"Doe",age:25}; 
+var x,txt = "";
+
+for (x in person){
+    txt=txt + person[x];
+}
+		</pre>
+	
+
+	</section>
+
+	<!-- 固定样式 -->
+
+	<!-- 分隔线 -->
+	<div class="post"></div>
+
+	<!-- 返回图标 -->
+	<a href="#background"><div id="scrollup"></div></a>
+
+	<!-- 固定格式的尾部 -->
+	<footer>
+		<p>Troy's blog &copy 2015 (  ͡° ͜ ʖ ͡°)</p>
+		<p>自豪地由自己手写(ง •̀_•́)ง</p>
+	</footer>
+</body>
+</html>

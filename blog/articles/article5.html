@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="唐锐的博客">
+    <meta name="author" content="唐锐">
+	<title>DOM编程艺术学习笔记(三)</title>
+	<link rel="stylesheet" href="../css/article.css">
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+<body>
+	<div id="background"><a id="home" href="../index.html">Home</a></div>	
+	<header>
+		<h1>DOM编程艺术学习笔记(三)</h1>
+		<img src="http://7xjr92.com1.z0.glb.clouddn.com/头像I.png" height="30" width="30" alt="Troy">
+		<time datetime="2012-06-15">15 June 2015</time>
+	</header>
+	<section id="content">
+	<h2>书中示例代码</h2>
+	
+		<pre>
+function prepareGallery(){
+    if(!document.getElementById||!document.getElementsByTagName||!document.getElementById("imagegallery")) return false;
+    //检测浏览器是否支持以上方法及id为"imagegallery"的对象是否存在
+    var gallery = document.getElementById("imagegallery");
+    //将id为"imagegallery"的对象赋给变量 gallery
+    var links = gallery.getElementsByTagName("a");
+    //将gallery里的所有a元素赋给links变量
+    for (var i = 0; i < links.length; i ++){
+        //遍历links里的元素
+        links.onclick = function(){
+            return showPic(this) ? false : true;
+            //像links里的元素添加onclick事件
+            //如果showPic函数返回true则onclick事件为false，浏览器检测不到点击事件
+            //就不会打开新链接，反之亦然
+        }
+    }
+}
+		</pre>
+	
+	
+		<pre>
+function showPic(whichpic){
+    if(!document.getElementById("placeholder")) return false;
+    //检查“placeholder”是否存在
+    var source = whichpic.getAttribute("href");
+    //获取运行showPic函数的元素的"href"值并将其赋给source变量
+    var placeholder = document.getElementById("placeholder");
+    //获取id为"placeholder"的对象并将其赋给placeholder变量
+    if(placeholder.nodeName != "IMG") return false;
+    //检查placeholder的节点名称是不是"IMG"(大写)，检查它是不是img元素
+    placeholder.setAttribute("src", source);
+    //设置placeholder的"src"属性为source变量的值
+    if(document.getElementById("description")){
+        //如果存在id为"description"的对象的话，就运行一下代码
+        var text = whichpic.getAttribute("title") ? whichpic.getAttribute("title") : "";
+        //如果存在"title"属性的话就将值赋给text，如果没有就将空字符串赋给text
+        var description = document.getElementById("description");
+        if(description.firstChild.nodeType == 3){
+            description.fitstChild.nodeValue = text;
+            //将description的第一个子元素(即文本节点)的节点值设置为text的值
+        }
+    }
+    return true;
+}			
+		</pre>
+	
+
+	<h2>DOM Core 和 HTML-DOM</h2>
+	<p>在上面用到了以下几种DOM方法：</p>
+	<ul>
+		<li><mark>getElementById</mark></li>
+		<li><mark>getElementsByTagName</mark></li>
+		<li><mark>getAttribute</mark></li>
+		<li><mark>setAttribute</mark></li>
+	</ul>
+	<p>这些方法都是DOM Core的组成部分。它们并不专属于JavaScript，支持DOM的任何一种程序设计语言都可以使用它们。 <br><br>
+	HTML-DOM提供了许多描述各种HTML元素的属性。比如：</p>
+	
+		<pre>
+element.getAttribute("src")
+//简化为
+element.src			
+		</pre>
+	
+	<p>又比如说，HTML-DOM提供了一个body对象，可以把：</p>
+	
+		<pre>
+document.getElementsByTagName("body")[0]
+//简化为
+document.body			
+		</pre>
+	
+	</section>
+
+		<!-- 固定样式 -->
+
+	<!-- 分隔线 -->
+	<div class="post"></div>
+
+	<!-- 返回图标 -->
+	<a href="#background"><div id="scrollup"></div></a>
+
+	<!-- 固定格式的尾部 -->
+	<footer>
+		<p>Troy's blog &copy 2015 (  ͡° ͜ ʖ ͡°)</p>
+		<p>自豪地由自己手写(ง •̀_•́)ง</p>
+	</footer>
+</body>
+</html>

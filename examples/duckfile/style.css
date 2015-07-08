@@ -1,0 +1,273 @@
+@font-face {
+	font-family: OpenSans-Regular;
+	src: url(OpenSans-Regular.ttf);
+}
+* {
+	margin: 0;
+	padding: 0;
+	font-family: OpenSans-Regular, Arial, sans-serif;
+}
+body {
+	background-image: url(bg.png);
+}
+#line {
+	height: 5px;
+	background-color: #fbfbfb;
+	border-bottom: 1px solid #bebebe;
+}
+nav {
+	height: 50px;
+	background-image: url(nav-bg.png);
+	font-size: 18px;
+}
+nav ul {
+	width: 940px;
+	margin: 0 auto;
+}
+nav li {
+	float: left;
+	list-style: none;
+	margin-right: 25px;
+	font-weight: lighter;
+	color: #fff;
+	padding: 11px 20px 15px;
+	background-image: url(nav-line.png);
+}
+nav li:first-child {
+	margin-left: 20px;
+	background-color: #fbfbfb;
+	color: #000;
+	border-top-left-radius: 5px; 
+	border-top-right-radius: 5px; 
+}
+nav a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: lighter;
+}
+nav li span {
+	color: #000;
+}
+
+/*nav end*/
+header {
+	width: 940px;
+	height: 115px;
+	margin: 0 auto;
+	margin-top: 5px;
+	position: relative;
+}
+#logo {
+	position: absolute;
+	top: 38px;
+	left: 32px;
+}
+header p {
+	font-size: 14px;
+	position: absolute;
+	top: 53px;
+	left: 300px;
+}
+header input {
+	border: 1px solid #eee;
+	padding: 5px 10px;
+	border-radius: 10px;
+	position: absolute;
+	top: 50px;
+	right: 11px;
+}
+#Search-btn {
+	position: absolute;
+	top: 55px;
+	right: 25px;
+}
+
+/*header end*/
+section.news {
+	height: 334px;
+	width: 874px;
+	margin: 0 auto;
+	background-color: #fbfbfb;
+	padding: 33px;
+	border: 1px solid #d1d1d1;
+	border-radius: 5px;
+}
+.news img {
+	float: right;
+	margin-left: 10px;
+}
+.news p {
+	font-size: 13px;
+	letter-spacing: 1px;
+	line-height: 1.5em;
+	margin-top: 26px;
+}
+.news a {
+	width: 115px;
+	height: 30px;
+	float: left;
+	background-color: #69a0ae;
+	margin-right: 15px;
+	margin-top: 30px;
+	padding: 10px;
+	border-radius: 5px;
+
+}
+.news a {
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	display: inline-block;
+}
+.news a:last-child {
+	background-color: #a9c863;
+	width: 100px;
+}
+
+/*news end*/
+
+.banner {
+	background-image: url(banner-bg.png);
+	width: 900px;
+	height: 60px;
+	margin: 22px auto 0;
+	padding: 20px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 18px;
+}
+.banner a {
+	display: inline-block;
+	text-decoration: none;
+	color: #2b380e;
+	background-color: #cbd6b2;
+	width: 160px;
+	height: 40px;
+	font-size: 18px;
+	line-height: 40px;
+	padding-left: 10px;
+	float: right;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-left: 87px;
+}
+
+/*banner end*/
+
+.work {
+	height: 406px;
+	width: 940px;
+	margin: 22px auto 42px;
+}
+.work div {
+	width: 240px;
+	height: 340px;
+	float: left;
+	background-color: #fbfbfb;
+	margin-right: 20px;
+	padding: 28px 30px 34px;
+	border-radius: 5px;
+}
+.work div:last-child {
+	margin-right: 0;
+}
+.work h3 {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 10px;
+}
+.work img {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 24px;
+}
+.work p {
+	font-size: 14px;
+	line-height: 1.5em;
+}
+.work a {
+	display: block;
+	width: 100px;
+	height: 28px;
+	background-color: #669dab;
+	line-height: 28px;
+	font-size: 18px;
+	color: #fff;
+	text-decoration: none;
+	padding: 3px 10px;
+	border-radius: 5px;
+	margin-top: 23px;
+}
+
+/*work end*/
+
+.service {
+	width: 876px;
+	height: 490px;
+	margin: 45px auto 0;
+	padding: 0 32px;
+}
+.service h3 {
+	border-bottom: 1px solid #bebebe;
+	padding-bottom: 5px;
+}
+.service div {
+	float: left;
+	width: 278px;
+	height: 138px;
+	margin-top: 12px;
+	padding: 28px 90px 30px 70px;
+	background-image: url(service-icon.gif);
+	background-repeat: no-repeat;
+	background-position: 0 26px;
+}
+.service p {
+	font-size: 16px;
+	line-height: 1.5em;
+}
+.service a {
+	display: block;
+	font-size: 16px;
+	width: 85px;
+	border-radius: 15px;
+	padding: 5px 10px;
+	background-color: #fcfcfc;
+	margin-top: 21px;
+	text-decoration: none;
+	color: #191919;
+	box-shadow: 2px 2px #eaa;
+}
+
+/*service end*/
+
+#footline {
+	width: 100%;
+	height: 5px;
+	background-color: #fff;
+	border-top: 1px solid #bebebe;
+}
+
+footer {
+	height: 54px;
+	width: 100%;
+	background-image: url(nav-bg.png);
+}
+.footer-content {
+	width: 940px;
+	height: 54px;
+	margin: 0 auto;
+	line-height: 54px;
+	font-size: 16px;
+}
+footer p {
+	width: 449px;
+	float: left;
+}
+footer p:first-child {
+	padding-right: 20px;
+	text-align: right;
+	border-right: 1px solid #333;
+}
+footer p:nth-child(2) {
+	padding-left: 20px;
+	text-align: left;
+}

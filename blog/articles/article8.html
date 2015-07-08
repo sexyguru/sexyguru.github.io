@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="唐锐的博客">
+    <meta name="author" content="唐锐">
+	<title>正则表达式 小结</title>
+	<link rel="stylesheet" href="../css/article.css">
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+<body>
+	<div id="background"><a id="home" href="../index.html">Home</a></div>	
+	<header>
+		<h1>正则表达式 小结</h1>
+		<img src="http://7xjr92.com1.z0.glb.clouddn.com/头像I.png" height="30" width="30" alt="Troy">
+		<time datetime="2012-06-18">18 June 2015</time>
+	</header>
+	<section id="content">
+	<p>正则表达式（英语：Regular Expression，在代码中常简写为RegEx、RegExp或RE）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式。</p>
+	<p>搜索模式可用于文本搜索和文本替换。</p>
+	<h2>语法</h2>
+	
+		<pre>
+/pattern/modifiers;
+		</pre>
+	
+	<p>实例：</p>
+	
+		<pre>
+var patt = /w3cschool/i
+		</pre>
+	
+	<p>实例解析：<br>
+	/w3cschool/i 是一个正则表达式。 w3cschool 是一个模式 (用于检索)。i 是一个修饰符 (搜索不区分大小写)。</p>
+	<h2>修饰符</h2>
+	<table>
+		<tr><td>修饰符</td><td>描述</td></tr>
+		<tr><td>i	</td><td>执行对大小写不敏感的匹配。</td></tr>
+		<tr><td>g	</td><td>执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）。</td></tr>
+		<tr><td>m	</td><td>执行多行匹配。</td></tr>
+			</table>
+
+	<h2>方括号</h2>
+	<p>方括号用于查找某个范围内的字符：</p>
+	<table>
+		<tr><td>表达式</td><td>描述</td></tr>
+		<tr><td>[abc]	</td><td>查找方括号之间的任何字符。</td></tr>
+		<tr><td>[^abc]	</td><td>查找任何不在方括号之间的字符。</td></tr>
+		<tr><td>[0-9]	</td><td>查找任何从 0 至 9 的数字。</td></tr>
+		<tr><td>[a-z]	</td><td>查找任何从小写 a 到小写 z 的字符。</td></tr>
+		<tr><td>[A-Z]	</td><td>查找任何从大写 A 到大写 Z 的字符。</td></tr>
+		<tr><td>[A-z]	</td><td>查找任何从大写 A 到小写 z 的字符。</td></tr>
+		<tr><td>[adgk]	</td><td>查找给定集合内的任何字符。</td></tr>
+		<tr><td>[^adgk]	</td><td>查找给定集合外的任何字符。</td></tr>
+	</table>
+
+	<h2>元字符</h2>
+	<p>元字符（Metacharacter）是拥有特殊含义的字符：</p>
+	<table>
+		<tr><td>元字符</td><td>描述</td></tr>
+		<tr><td>.	</td><td>查找单个字符，除了换行和行结束符。</td></tr>
+		<tr><td>\w	</td><td>查找单词字符。</td></tr>
+		<tr><td>\W	</td><td>查找非单词字符。</td></tr>
+		<tr><td>\d	</td><td>查找数字。</td></tr>
+		<tr><td>\D	</td><td>查找非数字字符。</td></tr>
+		<tr><td>\s	</td><td>查找空白字符。</td></tr>
+		<tr><td>\S	</td><td>查找非空白字符。</td></tr>
+		<tr><td>\b	</td><td>匹配单词边界。</td></tr>
+		<tr><td>\B	</td><td>匹配非单词边界。</td></tr>
+		<tr><td>\0	</td><td>查找 NUL 字符。</td></tr>
+		<tr><td>\n	</td><td>查找换行符。</td></tr>
+		<tr><td>\f	</td><td>查找换页符。</td></tr>
+		<tr><td>\r	</td><td>查找回车符。</td></tr>
+		<tr><td>\t	</td><td>查找制表符。</td></tr>
+		<tr><td>\v	</td><td>查找垂直制表符。</td></tr>
+		<tr><td>\xxx	</td><td>查找以八进制数 xxx 规定的字符。</td></tr>
+		<tr><td>\xdd	</td><td>查找以十六进制数 dd 规定的字符。</td></tr>
+		<tr><td>\uxxxx	</td><td>查找以十六进制数 xxxx 规定的 Unicode 字符。</td></tr>
+	</table>
+
+	<h2>量词</h2>
+	<table>
+		<tr><td>量词</td><td>描述</td></tr>	
+		<tr><td>n+	</td><td>匹配任何包含至少一个 n 的字符串。</td></tr>	
+		<tr><td>n*	</td><td>匹配任何包含零个或多个 n 的字符串。</td></tr>	
+		<tr><td>n?	</td><td>匹配任何包含零个或一个 n 的字符串。</td></tr>	
+		<tr><td>n{X}	</td><td>匹配包含 X 个 n 的序列的字符串。</td></tr>	
+		<tr><td>n{X,Y}	</td><td>匹配包含 X 或 Y 个 n 的序列的字符串。</td></tr>	
+		<tr><td>n{X,}	</td><td>匹配包含至少 X 个 n 的序列的字符串。</td></tr>	
+		<tr><td>n$	</td><td>匹配任何结尾为 n 的字符串。</td></tr>	
+		<tr><td>^n	</td><td>匹配任何开头为 n 的字符串。</td></tr>	
+		<tr><td>?=n	</td><td>匹配任何其后紧接指定字符串 n 的字符串。</td></tr>	
+		<tr><td>?!n	</td><td>匹配任何其后没有紧接指定字符串 n 的字符串。</td></tr>	
+	</table>
+
+	<h2>search() 方法和replace() 方法</h2>
+	<p>正则表达式通常用于两个字符串方法 : search() 和 replace()。<br>
+	<mark>search()</mark> 方法 用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。<br>
+	<mark>replace()</mark> 方法 用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</p>
+
+	
+		<pre>
+var str = "Visit w3cschool";
+var n = str.search(/w3cschool/i);
+
+var str = "Visit w3cschool!";
+var n = str.search("w3cschool");
+
+var str = "Visit Microsoft!";
+var res = str.replace(/microsoft/i, "w3cschool");
+
+var str = "Visit Microsoft!";
+var res = str.replace("Microsoft", "w3cschool");
+		</pre>
+	
+
+	<h2>match() 方法</h2>
+	<p><mark>match()</mark> 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</p>
+
+	<h2>RegExp 对象</h2>
+	<h2>test() 方法</h2>
+	<p><mark>test()</mark> 方法用于检测一个字符串是否匹配某个模式，如果字符串中含有匹配的文本，则返回 true，否则返回 false。</p>
+	
+		<pre>
+var patt = /e/;
+patt.test("The best things in life are free!");   //true
+		</pre>
+	
+	<h2>exec() 方法</h2>
+	<p>exec() 方法用于检索字符串中的正则表达式的匹配。该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。</p>
+	
+		<pre>
+/e/.exec("The best things in life are free!");     // e  （有多个e，但是只返回一个e已表明是否存在）
+		</pre>
+	
+	</section>
+
+		<!-- 固定样式 -->
+
+	<!-- 分隔线 -->
+	<div class="post"></div>
+
+	<!-- 返回图标 -->
+	<a href="#background"><div id="scrollup"></div></a>
+
+	<!-- 固定格式的尾部 -->
+	<footer>
+		<p>Troy's blog &copy 2015 (  ͡° ͜ ʖ ͡°)</p>
+		<p>自豪地由自己手写(ง •̀_•́)ง</p>
+	</footer>
+</body>
+</html>

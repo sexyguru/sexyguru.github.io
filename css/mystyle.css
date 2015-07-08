@@ -1,0 +1,37 @@
+body{
+    font-family: OpenSans-Light, sans-serif;
+    background-image: url(http://7xjr92.com1.z0.glb.clouddn.com/背景2015-06-Life-of-Pix-free-stock-photos-woman-hair-back-szolkin.jpg);
+    background-size:cover;
+    letter-spacing: 2px;
+    background-attachment:fixed;
+} 
+#github{
+	color:white;
+}
+p.lead a{
+  width: 120px;
+}
+h1{
+  font-size: 3.5em;
+}
+h3{
+  font-size: 2em;
+}
+p.lead{
+  font-size: 1.6em;
+}
+a, 
+a:hover,
+a:visted{
+  color: white;
+  text-decoration: none;
+}
+.btn-default, .btn-default:hover, .btn-default:focus{
+    background: transparent;
+    color: white;
+    border-color: #fff;
+}
+.btn-group-lg>.btn, .btn-lg, .btn{
+    border-radius: 0px;
+
+}

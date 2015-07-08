@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="唐锐的博客">
+    <meta name="author" content="唐锐">
+	<title>JavaScript 学习小结（二）</title>
+	<link rel="stylesheet" href="../css/article.css">
+	<link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+<body>
+	<div id="background"><a id="home" href="../index.html">Home</a></div>	
+	<header>
+		<h1>JavaScript 学习小结（二）</h1>
+		<img src="http://7xjr92.com1.z0.glb.clouddn.com/头像I.png" height="30" width="30" alt="Troy">
+		<time datetime="2012-06-20">20 June 2015</time>
+	</header>
+	<section id="content">
+	<h2>JavaScript 错误 - throw、try 和 catch</h2>
+	<p>
+		~ try 语句测试代码块的错误。（运行代码）<br>
+		~ catch 语句处理错误。（发生错误时运行的代码）<br>
+		~ throw 语句创建自定义错误。（创建或者抛出异常）<br><br>
+		如果把 throw 与 try 和 catch 一起使用，就能够控制程序流，并生成自定义的错误消息。
+	</p>
+	
+		<pre>
+&ltscript&gt
+function myFunction()
+{
+try
+	{ 
+	var x=document.getElementById("demo").value;
+	if(x=="")    throw "empty";
+	if(isNaN(x)) throw "not a number";
+	if(x&gt10)     throw "too high";
+	if(x&lt5)      throw "too low";
+	}
+catch(err)
+    {
+    var y=document.getElementById("mess");
+    y.innerHTML="Error: " + err + ".";
+    }
+}
+&lt/script&gt
+
+&lth1&gtMy First JavaScript&lt/h1&gt
+&ltp&gtPlease input a number between 5 and 10:&lt/p&gt
+&ltinput id="demo" type="text"&gt
+&ltbutton type="button" onclick="myFunction()"&gtTest Input&lt/button&gt
+&ltp id="mess"&gt&lt/p&gt			
+		</pre>
+	
+	<h2>表单验证</h2>
+	
+		<pre>
+&ltscript&gt
+function validateForm()
+{
+var x=document.forms["myForm"]["fname"].value;  
+//选择forms对象的[form的"name"][input的"name"]
+if (x==null || x=="")
+    {
+    alert("姓必须填写");
+    return false;
+    }
+}
+&lt/script&gt
+
+&ltform name="myForm" onsubmit="return validateForm()"&gt
+姓: &ltinput type="text" name="fname"&gt
+&ltinput type="submit" value="提交"&gt
+&lt/form&gt		
+		</pre>
+	
+
+	<h3>E-mail 验证</h3>
+	<p>输入的数据必须包含 @ 符号和点号(.)。同时，@ 不可以是邮件地址的首字符，并且 @ 之后需有至少一个点号：</p>
+
+	
+		<pre>
+function validateForm()
+{
+var x=document.forms["myForm"]["email"].value;
+var atpos=x.indexOf("@");
+var dotpos=x.lastIndexOf(".");
+if (atpos&lt1 || dotpos&ltatpos+2 || dotpos+2&gt=x.length)
+    {
+    alert("Not a valid e-mail address");
+    return false;
+    }
+}
+
+&ltform name="myForm" action="demo-form.php" onsubmit="return validateForm();" method="post"&gt
+Email: &ltinput type="text" name="email"&gt
+&ltinput type="submit" value="Submit"&gt
+	</form>
+		</pre>
+	
+
+	<h2>JSON</h2>
+	<p>JSON 是用于存储和传输数据的格式，通常用于服务端向网页传递数据 。</p><br>
+	<p>JSON 格式在语法上与创建 JavaScript 对象代码是相同的。由于它们很相似，所以 JavaScript 程序可以很容易的将 JSON 数据转换为 JavaScript 对象。</p>
+	<h3>JSON 语法规则</h3>
+	<ul>
+		<li>数据为 键/值 对。</li>
+		<li>数据由逗号分隔。</li>
+		<li>大括号保存对象</li>
+		<li>方括号保存数组</li>
+	</ul>
+	
+		<pre>
+&ltp id="demo"&gt&lt/p&gt
+&ltscript&gt
+var text = '{"employees":[' +      //创建 JavaScript 字符串，字符传为 JSON 格式的数据(不知道"+"有什么用)
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+obj = JSON.parse(text);    //JSON.parse() 将字符串转换为 JavaScript 对象
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+&lt/script&gt
+		</pre>
+	
+	<p>eval() 函数使用的是 JavaScript 编译器，可解析 JSON 文本，然后生成 JavaScript 对象。必须把文本包围在括号中，这样才能避免语法错误：</p>
+	
+		<pre>
+var object1 = eval("{}");        //抛出错误
+var object2 = eval(" ({}) ");        // 没问题
+var object3 = eval( "(" + jsonText + ")" );        // 通用的解决方案
+		</pre>
+	
+	</section>
+
+		<!-- 固定样式 -->
+
+	<!-- 分隔线 -->
+	<div class="post"></div>
+
+	<!-- 返回图标 -->
+	<a href="#background"><div id="scrollup"></div></a>
+
+	<!-- 固定格式的尾部 -->
+	<footer>
+		<p>Troy's blog &copy 2015 (  ͡° ͜ ʖ ͡°)</p>
+		<p>自豪地由自己手写(ง •̀_•́)ง</p>
+	</footer>
+</body>
+</html>
